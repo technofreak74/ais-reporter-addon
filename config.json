@@ -1,6 +1,6 @@
 {
   "name": "AIS Reporter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "slug": "ais_reporter",
   "description": "Simple addon to forward NMEA0183 AIS data from a local AIS receiver to one or more network destinations",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
