@@ -8,7 +8,7 @@ RUN apk add --no-cache python3
 RUN pip3 install pyserial
 
 # Copy data for add-on
-COPY run.sh /
+COPY run.sh UDPbroadcast.py /
 RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
