@@ -1,1 +1,4 @@
-echo AIS Reporter Hello World!
+echo AIS Reporter Starting...
+
+python3 UDPbroadcast.py
+
