@@ -16,13 +16,14 @@ for opt, arg in opts:
     if opt == "-p":
         serialPort = arg
 
-print ('Using serial port: ' + serialPort)
 try:
     ser = serial.Serial(serialPort, 38400)
 except serial.SerialException:
     print('Failed to open serial port, check that it is connected and specified '
           'using the serial_port config option. Default is /dev/ttyUSB0')
     sys.exit(3)
+
+print ('Using serial port: ' + serialPort, flush=True)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
