@@ -1,7 +1,29 @@
+import getopt
 import serial
 import socket
+import sys
 
-ser = serial.Serial('/dev/ttyUSB0', 38400)
+try:
+    opts, nots = getopt.getopt(sys.argv[1:], 'p:')
+except getopt.GetoptError:
+    print('UDPbroadcast.py -p <serial-port>')
+    sys.exit(2)
+
+# Default serial port
+serialPort = '/dev/ttyUSB0'
+
+for opt, arg in opts:
+    if opt == "-p":
+        serialPort = arg
+
+print ('Using serial port: ' + serialPort)
+try:
+    ser = serial.Serial(serialPort, 38400)
+except serial.SerialException:
+    print('Failed to open serial port, check that it is connected and specified '
+          'using the serial_port config option. Default is /dev/ttyUSB0')
+    sys.exit(3)
+
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 while 1:
