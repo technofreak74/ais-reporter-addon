@@ -6,7 +6,11 @@
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "before",
   "boot": "auto",
-  "options": {},
-  "schema": {},
+  "options": {
+    "serial_port": "/dev/ttyUSB0"
+  },
+  "schema": {
+    "serial_port": "str"
+  },
   "auto_uart": true
 }
