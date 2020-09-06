@@ -26,7 +26,7 @@ for dest in options['destinations']:
 
 print('Destinations:')
 for dest in destinations:
-    print(*dest, sep=':')
+    print(*dest, sep=':', flush=True)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
