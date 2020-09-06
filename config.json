@@ -7,10 +7,16 @@
   "startup": "before",
   "boot": "auto",
   "options": {
-    "serial_port": "/dev/ttyUSB0"
+    "serial_port": "/dev/ttyUSB0",
+    "destinations": [
+      { "address": "example.com", "port": 5050 }
+    ]
   },
   "schema": {
-    "serial_port": "str"
+    "serial_port": "str",
+    "destinations": [
+      { "address": "str", "port": "port" }
+    ]
   },
   "auto_uart": true
 }
