@@ -7,7 +7,7 @@ import sys
 # intentionally not implemented since the user will have no way to fix the
 # issue (it is a developer issue). A python exception printed out in the log
 # is the most useful thing for them to put in a bug report.
-options_file = open('options.json')
+options_file = open('/data/options.json')
 options = json.load(options_file);
 
 serialPort = options['serial_port']
